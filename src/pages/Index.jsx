@@ -61,9 +61,10 @@ const Index = () => {
 
         {/* Mobile Menu Overlay */}
         <div 
-          className={`md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border overflow-hidden transition-all duration-300 ease-in-out shadow-lg ${
+          className={`md:hidden absolute top-full left-0 right-0 border-b border-border overflow-hidden transition-all duration-300 ease-in-out shadow-lg z-50 ${
             menuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
           }`}
+          style={{ backgroundColor: 'hsl(0, 30%, 8%)' }}
         >
           <div className="flex flex-col p-4 gap-4">
             {navLinks.map((link) => (
