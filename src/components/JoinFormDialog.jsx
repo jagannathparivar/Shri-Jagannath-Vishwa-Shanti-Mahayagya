@@ -35,18 +35,16 @@ const JoinFormDialog = ({ open, onOpenChange }) => {
     e.preventDefault();
     setLoading(true);
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwd6yzyqbVbXxd6U7HIUMrkflI5UfddvA0Ykq2SyMe4b8kdUYIDt_Wl9JQZ39y_7AJ2/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyGp9IqSXrEuSWiKGcSOUiMAk1fbNVBUdCWSRGrjuoUgfNhYtzc_c-yMnOd6X787DW2/exec";
 
     try {
-      // Use no-cors to avoid CORS issues with Google Apps Script
-      // Content-Type: text/plain is allowed in no-cors and the script can parse it
+      // Use URLSearchParams for maximum compatibility with Google Apps Script
+      const params = new URLSearchParams(formData);
+
       await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: {
-          "Content-Type": "text/plain",
-        },
-        body: JSON.stringify(formData),
+        body: params,
       });
 
       setLoading(false);
