@@ -25,7 +25,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <span className="font-heading text-lg md:text-2xl font-bold text-primary whitespace-nowrap overflow-hidden text-ellipsis max-w-[70%]">
+          <span className="font-heading text-base sm:text-lg md:text-2xl font-bold text-primary whitespace-nowrap overflow-hidden text-ellipsis flex-1 min-w-0 mr-2">
             <span className="hidden sm:inline">॥ Shri Jagannath Vishwa Shanti Mahayagya ॥</span>
             <span className="sm:hidden">॥ Shri Jagannath Mahayagya ॥</span>
           </span>
@@ -43,18 +43,18 @@ const Index = () => {
             </button>
           </div>
 
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex md:hidden items-center gap-2 shrink-0">
             <button
               onClick={() => setFormOpen(true)}
-              className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-xs font-medium whitespace-nowrap shadow-sm">
+              className="bg-primary text-primary-foreground px-3 py-1.5 rounded-md text-xs font-medium whitespace-nowrap shadow-sm">
               Join
             </button>
             <button 
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 text-primary hover:bg-primary/10 rounded-md transition-colors"
+              className="p-1.5 text-primary hover:bg-primary/10 rounded-md transition-colors"
               aria-label="Toggle menu"
             >
-              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
