@@ -15,17 +15,61 @@ import { Textarea } from "@/components/ui/textarea";
 
 const JoinFormDialog = ({ open, onOpenChange }) => {
   const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    age: "",
+    gotra: "",
+    phone: "",
+    email: "",
+    address: "",
+    donation: "",
+    message: ""
+  });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate submission
-    setTimeout(() => {
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwd6yzyqbVbXxd6U7HIUMrkflI5UfddvA0Ykq2SyMe4b8kdUYIDt_Wl9JQZ39y_7AJ2/exec";
+
+    try {
+      // Use no-cors to avoid CORS issues with Google Apps Script
+      // Content-Type: text/plain is allowed in no-cors and the script can parse it
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        body: JSON.stringify(formData),
+      });
+
       setLoading(false);
       onOpenChange(false);
-      alert(" Registration Successful!\n\nYou have been registered for the Mahayagya. Jay Jagannath!");
-    }, 1000);
+      
+      // Reset form
+      setFormData({
+        fullName: "",
+        age: "",
+        gotra: "",
+        phone: "",
+        email: "",
+        address: "",
+        donation: "",
+        message: ""
+      });
+
+      alert("✨ Registration Successful!\n\nYour details have been recorded in the Mahayagya register. Jay Jagannath!");
+    } catch (error) {
+      console.error("Submission error:", error);
+      setLoading(false);
+      alert("Registration failed. Please try again or check your internet connection.");
+    }
   };
 
   return (
@@ -43,44 +87,104 @@ const JoinFormDialog = ({ open, onOpenChange }) => {
         <form onSubmit={handleSubmit} className="join-form">
           <div className="join-form-group">
             <Label htmlFor="fullName" className="join-form-label">Full Name *</Label>
-            <Input id="fullName" required placeholder="Enter your full name" className="join-form-input" />
+            <Input 
+              id="fullName" 
+              required 
+              placeholder="Enter your full name" 
+              className="join-form-input"
+              value={formData.fullName}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="join-form-row">
             <div className="join-form-group">
               <Label htmlFor="age" className="join-form-label">Age *</Label>
-              <Input id="age" type="number" min="1" required placeholder="Your age" className="join-form-input" />
+              <Input 
+                id="age" 
+                type="number" 
+                min="1" 
+                required 
+                placeholder="Your age" 
+                className="join-form-input"
+                value={formData.age}
+                onChange={handleChange}
+              />
             </div>
             <div className="join-form-group">
               <Label htmlFor="gotra" className="join-form-label">Gotra</Label>
-              <Input id="gotra" placeholder="Your Gotra" className="join-form-input" />
+              <Input 
+                id="gotra" 
+                placeholder="Your Gotra" 
+                className="join-form-input"
+                value={formData.gotra}
+                onChange={handleChange}
+              />
             </div>
           </div>
 
           <div className="join-form-row">
             <div className="join-form-group">
               <Label htmlFor="phone" className="join-form-label">Phone Number *</Label>
-              <Input id="phone" type="tel" required placeholder="+91 XXXXX XXXXX" className="join-form-input" />
+              <Input 
+                id="phone" 
+                type="tel" 
+                required 
+                placeholder="+91 XXXXX XXXXX" 
+                className="join-form-input"
+                value={formData.phone}
+                onChange={handleChange}
+              />
             </div>
             <div className="join-form-group">
               <Label htmlFor="email" className="join-form-label">Email *</Label>
-              <Input id="email" type="email" required placeholder="your@email.com" className="join-form-input" />
+              <Input 
+                id="email" 
+                type="email" 
+                required 
+                placeholder="your@email.com" 
+                className="join-form-input"
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
           </div>
 
           <div className="join-form-group">
             <Label htmlFor="address" className="join-form-label">Address *</Label>
-            <Input id="address" required placeholder="Your full address" className="join-form-input" />
+            <Input 
+              id="address" 
+              required 
+              placeholder="Your full address" 
+              className="join-form-input"
+              value={formData.address}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="join-form-group">
             <Label htmlFor="donation" className="join-form-label">Donation Amount (INR)</Label>
-            <Input id="donation" type="number" min="0" placeholder="Enter amount if contributing" className="join-form-input" />
+            <Input 
+              id="donation" 
+              type="number" 
+              min="0" 
+              placeholder="Enter amount if contributing" 
+              className="join-form-input"
+              value={formData.donation}
+              onChange={handleChange}
+            />
           </div>
 
           <div className="join-form-group">
             <Label htmlFor="message" className="join-form-label">Message (Optional)</Label>
-            <Textarea id="message" placeholder="Any special requests or message..." rows={3} className="join-form-input" />
+            <Textarea 
+              id="message" 
+              placeholder="Any special requests or message..." 
+              rows={3} 
+              className="join-form-input"
+              value={formData.message}
+              onChange={handleChange}
+            />
           </div>
 
           <button
