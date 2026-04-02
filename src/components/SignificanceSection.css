@@ -59,9 +59,15 @@
 .significance-stats-grid {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
   text-align: center;
+}
+
+@media (min-width: 640px) {
+  .significance-stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .significance-stat-card {
