@@ -1,0 +1,129 @@
+.about-section {
+  padding: 5rem 1rem;
+  background-color: hsl(var(--secondary));
+}
+
+.about-container {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-subtitle {
+  color: hsl(var(--primary));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.about-title {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, hsl(40 70% 70%), hsl(40 65% 55%), hsl(40 55% 40%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.about-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-divider-line {
+  height: 1px;
+  width: 5rem;
+  background-color: hsl(var(--primary));
+  opacity: 0.4;
+}
+
+.about-divider-icon {
+  color: hsl(var(--primary));
+}
+
+.about-description {
+  color: hsl(var(--foreground));
+  font-size: 1.125rem;
+  line-height: 1.625;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+}
+
+.about-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.about-card {
+  background-color: hsl(var(--card));
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid hsl(var(--border));
+  transition: all 0.3s ease-in-out;
+}
+
+.about-card:hover {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 20px hsl(40 65% 55% / 0.3), 0 0 60px hsl(40 65% 55% / 0.1); /* glow-gold */
+}
+
+.about-card-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--muted));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.25rem;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.about-card:hover .about-card-icon-wrapper {
+  background-color: hsl(var(--primary) / 0.2);
+}
+
+.about-card-icon {
+  width: 2rem;
+  height: 2rem;
+  color: hsl(var(--primary));
+}
+
+.about-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  margin-bottom: 0.75rem;
+}
+
+.about-card-desc {
+  color: hsl(var(--muted-foreground));
+  line-height: 1.625;
+}

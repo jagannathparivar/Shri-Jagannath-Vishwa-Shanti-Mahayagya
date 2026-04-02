@@ -1,0 +1,144 @@
+.sacred-events-section {
+  padding: 5rem 1rem;
+  background-color: hsl(var(--background));
+  position: relative;
+  overflow: hidden;
+}
+
+.sacred-events-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+}
+
+.sacred-events-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sacred-events-container {
+  position: relative;
+  z-index: 10;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sacred-events-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.sacred-events-subtitle {
+  color: hsl(var(--primary));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.sacred-events-title {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, hsl(40 70% 70%), hsl(40 65% 55%), hsl(40 55% 40%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (min-width: 768px) {
+  .sacred-events-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.sacred-events-desc {
+  color: hsl(var(--muted-foreground));
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.sacred-events-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .sacred-events-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .sacred-events-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.sacred-event-card {
+  background-color: hsl(var(--card) / 0.8);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid hsl(var(--border));
+  transition: all 0.3s ease-in-out;
+}
+
+.sacred-event-card:hover {
+  border-color: hsl(var(--primary));
+}
+
+.sacred-event-icon-wrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--primary) / 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.sacred-event-card:hover .sacred-event-icon-wrapper {
+  background-color: hsl(var(--primary) / 0.2);
+}
+
+.sacred-event-number {
+  color: hsl(var(--primary));
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+.sacred-event-title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  margin-bottom: 0.25rem;
+}
+
+.sacred-event-desc {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}
+
+.sacred-events-footer {
+  text-align: center;
+  color: hsl(var(--muted-foreground));
+  font-style: italic;
+}
