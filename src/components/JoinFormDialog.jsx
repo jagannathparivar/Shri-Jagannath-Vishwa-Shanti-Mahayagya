@@ -69,7 +69,6 @@ const JoinFormDialog = ({ open, onOpenChange }) => {
       alert("Registration failed. Please try again or check your internet connection.");
     }
   };
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="join-dialog-content">
@@ -80,6 +79,10 @@ const JoinFormDialog = ({ open, onOpenChange }) => {
           <DialogDescription className="join-dialog-desc">
             Fill in your details to register for the sacred event
           </DialogDescription>
+          <div className="join-dialog-notice">
+            * <strong>Important:</strong> To maintain the sanctity of the rituals, 
+            participation is limited to only <strong>51 families per day</strong>.
+          </div>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="join-form">

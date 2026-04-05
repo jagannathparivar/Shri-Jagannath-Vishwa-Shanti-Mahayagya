@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import EventDetails from "@/components/EventDetails";
 import FAQSection from "@/components/FAQSection";
 import JoinFormDialog from "@/components/JoinFormDialog";
+import GallerySection from "@/components/GallerySection";
 
 const Index = () => {
   const [formOpen, setFormOpen] = useState(false);
@@ -17,6 +18,7 @@ const Index = () => {
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Events", href: "#events" },
+    { name: "Gallery", href: "#gallery" },
     { name: "Details", href: "#details" },
     { name: "FAQ", href: "#faq" },
   ];
@@ -85,6 +87,7 @@ const Index = () => {
       <AboutSection />
       <SignificanceSection />
       <SacredEventsSection />
+      <GallerySection />
       <HowToParticipateSection onJoinClick={() => setFormOpen(true)} />
       <TestimonialsSection />
       <EventDetails onJoinClick={() => setFormOpen(true)} />

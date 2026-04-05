@@ -1,3 +1,4 @@
+import { Info } from "lucide-react";
 import yagyaCeremony from "@/assets/yagya-ceremony.jpg";
 import "./SacredEventsSection.css";
 
@@ -44,6 +45,19 @@ const SacredEventsSection = () => {
         <p className="sacred-events-footer">
           ...and 28 more sacred ceremonies. Join to experience them all.
         </p>
+
+        <div className="sacred-notice-card">
+          <div className="sacred-notice-header">
+            <Info className="sacred-notice-icon" />
+            <span className="sacred-notice-tag">Sacred Participation</span>
+          </div>
+          <p className="sacred-notice-text">
+            To uphold the <strong>sanctity and spiritual depth</strong> of the rituals, 
+            participation is graciously limited to <strong>51 families per day</strong>. 
+            This ensures that every participant receives the full measure of divine vibrations 
+            and personal blessings during this sacred assembly.
+          </p>
+        </div>
       </div>
     </section>
   );

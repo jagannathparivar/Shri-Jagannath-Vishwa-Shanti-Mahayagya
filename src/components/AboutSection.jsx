@@ -1,4 +1,4 @@
-import { Heart, Sparkles, HandHeart } from "lucide-react";
+import { Heart, Sparkles, ShieldCheck } from "lucide-react";
 import "./AboutSection.css";
 
 const AboutSection = () => {
@@ -17,28 +17,28 @@ const AboutSection = () => {
 
         <p className="about-description">
           Jagannath Vishwa Shanti Mahayagya is a divine Vedic ritual for global welfare. 
-          It specifically fosters <strong>Peace</strong> by harmonizing the mind, 
-          invites <strong>Wealth</strong> through spiritual and material abundance, 
-          and bestows eternal <strong>Happiness</strong> by connecting the soul with 
+          It specifically helps <strong>Remove Negativity</strong> by purifying the mind, 
+          invites <strong>Prosperity</strong> through spiritual and material abundance, 
+          and bestows <strong>Health & Well-Being</strong> by connecting the soul with 
           Lord Jagannath’s infinite grace and universal love.
         </p>
 
         <div className="about-grid">
           {[
           {
+            icon: ShieldCheck,
+            title: "Remove Negativity",
+            desc: "Eliminate negative energies and obstacles through sacred Vedic vibrations that purify the mind and surroundings."
+          },
+          {
             icon: Sparkles,
-            title: "Peace",
-            desc: "Achieve profound inner tranquility and mental harmony through sacred Vedic vibrations that purify the mind and surroundings."
+            title: "Prosperity",
+            desc: "Invoke divine abundance and material growth through sacred offerings that open new pathways to holistic success."
           },
           {
             icon: Heart,
-            title: "Wealth",
-            desc: "Invoke divine abundance and material prosperity through sacred offerings that open new pathways to holistic success and well-being."
-          },
-          {
-            icon: HandHeart,
-            title: "Happiness",
-            desc: "Experience everlasting joy and soul-deep contentment by establishing a direct spiritual connection with Lord Jagannath’s infinite grace."
+            title: "Health & Well-Being",
+            desc: "Experience physical vitality and mental wellness by connecting with the healing vibrations of the Mahayagya."
           }].
           map((item) =>
           <div
