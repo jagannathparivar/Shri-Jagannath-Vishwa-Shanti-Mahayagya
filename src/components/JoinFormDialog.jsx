@@ -181,8 +181,8 @@ const JoinFormDialog = ({ open, onOpenChange }) => {
             <Textarea 
               id="message" 
               placeholder="Any special requests or message..." 
-              rows={3} 
-              className="join-form-input"
+              rows={4} 
+              className="join-form-input min-h-[100px]"
               value={formData.message}
               onChange={handleChange}
             />

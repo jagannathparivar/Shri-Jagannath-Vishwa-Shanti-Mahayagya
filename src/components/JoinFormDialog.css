@@ -2,6 +2,13 @@
   background-color: hsl(var(--card));
   border: 1px solid hsl(var(--border));
   max-width: 32rem;
+  width: 95vw !important; /* Ensure it fits on very small devices */
+}
+
+@media (max-width: 640px) {
+  .join-dialog-content {
+    padding: 1.5rem 1rem !important; /* Reduced horizontal padding for more form space */
+  }
 }
 
 .join-dialog-title {
@@ -49,6 +56,13 @@
   gap: 1rem;
 }
 
+@media (max-width: 640px) {
+  .join-form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 .join-form-group {
   display: flex;
   flex-direction: column;
@@ -57,14 +71,17 @@
 
 .join-form-label {
   color: hsl(var(--foreground));
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .join-form-input {
   background-color: hsl(var(--input));
   border: 1px solid hsl(var(--border));
   color: hsl(var(--foreground));
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem; /* Increased for better mobile usability */
   border-radius: 0.375rem;
+  font-size: 1rem; /* Better font size for mobile inputs to prevent auto-zoom */
 }
 
 .join-form-input::placeholder {
