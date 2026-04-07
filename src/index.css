@@ -165,7 +165,7 @@ html,
   -webkit-tap-highlight-color: transparent;
   /* 7 */
   scroll-behavior: smooth;
-  scroll-padding-top: 5.5rem; /* Adjusted to match navbar height and provide spacing */
+  scroll-padding-top: 6rem; /* Adjusted to match py-4 navbar height and provide spacing */
 }
 
 /*

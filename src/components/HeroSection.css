@@ -37,7 +37,7 @@
   text-align: center;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 5rem; /* Space for the navbar */
+  padding-top: 8rem; /* Increased space to prevent icon from being covered by navbar */
   padding-bottom: 3rem; /* Spacing for section end */
   max-width: 72rem;
   margin-left: auto;
